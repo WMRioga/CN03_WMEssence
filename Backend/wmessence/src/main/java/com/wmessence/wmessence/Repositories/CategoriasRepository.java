@@ -14,5 +14,5 @@ import org.springframework.transaction.annotation.Transactional;
 public interface CategoriasRepository extends CrudRepository <CategoriasModel, Integer>{
     @Transactional (readOnly = true)
     @Query (value = "SELECT * FROM cn03_categorias WHERE _id= :id_category", nativeQuery = true)
-    public List <CategoriasModel> consulta_categorias (@Param ("id_category") String id_category);
+    public List <CategoriasModel> consulta_categorias (@Param ("id_category") Integer id_category);
 }

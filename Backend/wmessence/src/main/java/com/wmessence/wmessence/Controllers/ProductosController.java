@@ -6,6 +6,8 @@ import com.wmessence.wmessence.Repositories.ProductosRepository;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.web.bind.annotation.*;
 
 import org.springframework.http.HttpStatus;
@@ -25,7 +27,7 @@ public class ProductosController {
 
     @PostMapping (value = "/")
     @ResponseBody
-    public ResponseEntity<ProductosModel> agregar (@RequestBody ProductosModel productosModel){
+    public ResponseEntity<ProductosModel> agregar (@Valid @RequestBody ProductosModel productosModel){
         System.out.println(productosModel);
         ProductosModel obj = productosServices.save(productosModel);
         return new ResponseEntity<>(obj, HttpStatus.OK);
@@ -41,7 +43,7 @@ public class ProductosController {
         return new ResponseEntity<>(obj, HttpStatus.OK);
     }
     @PutMapping (value = "/")
-    public ResponseEntity<ProductosModel> editar (@RequestBody ProductosModel productosModel){
+    public ResponseEntity<ProductosModel> editar (@Valid @RequestBody ProductosModel productosModel){
         ProductosModel obj = productosServices.findById(productosModel.get_id());
         if (obj != null){
             obj.setProduct_name(productosModel.getProduct_name());
@@ -64,7 +66,7 @@ public class ProductosController {
     }
     @GetMapping ("/consulta")
     @ResponseBody
-    public List <ProductosModel> qry_product_category(@RequestParam ("qpc") String qpc){
+    public List <ProductosModel> qry_product_category(@RequestParam ("qpc") Integer qpc){
         return productosServices.qry_product_category(qpc);
     }
 }

@@ -6,6 +6,8 @@ import com.wmessence.wmessence.Services.CategoriasServices;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.web.bind.annotation.*;
 
 import org.springframework.http.HttpStatus;
@@ -25,7 +27,7 @@ public class CategoriasController {
 
     @PostMapping (value = "/")
     @ResponseBody
-    public ResponseEntity <CategoriasModel> agregar (@RequestBody CategoriasModel categoriasModel){
+    public ResponseEntity <CategoriasModel> agregar (@Valid @RequestBody CategoriasModel categoriasModel){
         System.out.println(categoriasModel);
         CategoriasModel obj = categoriasServices.save(categoriasModel);
         return new ResponseEntity<>(obj, HttpStatus.OK);
@@ -41,7 +43,7 @@ public class CategoriasController {
         return new ResponseEntity<>(obj, HttpStatus.OK);
     }
     @PutMapping (value = "/")
-    public ResponseEntity <CategoriasModel> editar (@RequestBody CategoriasModel categoriasModel){
+    public ResponseEntity <CategoriasModel> editar (@Valid @RequestBody CategoriasModel categoriasModel){
         CategoriasModel obj = categoriasServices.findById(categoriasModel.get_id());
         if(obj != null){
             obj.setCategory_name(categoriasModel.getCategory_name());

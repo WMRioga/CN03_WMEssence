@@ -14,6 +14,6 @@ import org.springframework.transaction.annotation.Transactional;
 public interface ProductosRepository extends CrudRepository <ProductosModel, Integer>{
     /* Operacion para seleccionar los articulos deridavos de la categoría (SELECT) */
     @Transactional (readOnly = true)
-    @Query (value = "SELECT * FROM cuentas WHERE product_category= :qpc", nativeQuery = true)
-    public List <ProductosModel> qry_product_category (@Param ("qpc") String qpc);
+    @Query (value = "SELECT * FROM cn03_productos WHERE product_category= :qpc", nativeQuery = true)
+    public List <ProductosModel> qry_product_category (@Param ("qpc") Integer qpc);
 }

@@ -31,7 +31,7 @@ public class ProductosServices {
         return (List<ProductosModel>) productosRepository.findAll();
     }
     @Transactional (readOnly = true)
-    public List <ProductosModel> qry_product_category(String qpc){
+    public List <ProductosModel> qry_product_category(Integer qpc){
         return (List<ProductosModel>) productosRepository.qry_product_category(qpc);
     }
 }

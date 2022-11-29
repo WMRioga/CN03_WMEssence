@@ -3,6 +3,7 @@ package com.wmessence.wmessence.Models;
 import java.io.Serializable;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotEmpty;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -16,6 +17,7 @@ public class CategoriasModel implements Serializable{
     @GeneratedValue (strategy = GenerationType.IDENTITY)
     @Column(name="_id")
     private int _id;
+    @NotEmpty(message = "El campo Nombre no puede esta vacío")
     @Column(name="category_name")
     private String category_name;
 

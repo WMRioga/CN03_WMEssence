@@ -3,6 +3,7 @@ package com.wmessence.wmessence.Models;
 import java.io.Serializable;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotEmpty;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -16,12 +17,15 @@ public class ProductosModel implements Serializable{
     @GeneratedValue (strategy = GenerationType.IDENTITY)
     @Column(name="_id")
     private int _id;
+    @NotEmpty(message = "El campo Nombre no puede estar vacío")
     @Column(name="product_name")
     private String product_name;
+    @NotEmpty(message = "El campo Categoría no puede estar vacío")
     @Column(name="product_category")
     private String product_category;
     @Column(name="product_description")
     private String product_description;
+    @NotEmpty(message = "El campo Valor no puede estar vacío")
     @Column(name="product_cost")
     private String product_cost;
 

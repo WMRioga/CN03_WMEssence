@@ -31,7 +31,7 @@ public class CategoriasServices {
         return (List <CategoriasModel>) categoriasRepository.findAll();
     }
     @Transactional (readOnly = true)
-    public List <CategoriasModel> consulta_categorias(String id_category){
+    public List <CategoriasModel> consulta_categorias(Integer id_category){
         return (List <CategoriasModel>) categoriasRepository.consulta_categorias(id_category);
     }
 }
