@@ -6,6 +6,9 @@ import com.wmessence.wmessence.Repositories.UsuariosRepository;
 
 import java.util.List;
 
+import javax.persistence.Query;
+import javax.persistence.EntityManager;
+
 import org.springframework.web.bind.annotation.*;
 
 import org.springframework.http.HttpStatus;
@@ -31,5 +34,24 @@ public class UsuariosController {
     public UsuariosModel consultarPorId (@PathVariable Integer id){
         return usuariosServices.findById(id);
     }
+    // @PostMapping("/login")
+    // public String login (@RequestBody UsuariosModel usuariosModel){
+    //     System.out.println("Correo: " + usuariosModel.getUsser_email());
+    //     System.out.println("Contraseña: " + usuariosModel.getUsser_passwd());
+    //     EntityManager em = getEntityManager();
+    //     try{
+    //         String query = "SELECT * FROM cn03_usuarios WHERE usser_email= '" + usuariosModel.getUsser_email() + "' AND usser_passwd= '" + usuariosModel.getUsser_passwd() + "'";
+    //         System.out.println(" " + query);
+    //         Query q = em.createNativeQuery(query);
+    //         List <UsuariosModel> listaUsuarios = q.getResultList();
+    //         if (listaUsuarios.isEmpty()){
+    //             return "no";
+    //         }else{
+    //             return "ok";
+    //         }
+    //     } catch (Exception ex){
+    //         System.out.println(" " + ex);
+    //     }
+    // }
 }
 // 3178865477 -- Nestor Anaya Chavez

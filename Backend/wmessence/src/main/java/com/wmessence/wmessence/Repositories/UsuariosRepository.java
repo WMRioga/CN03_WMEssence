@@ -13,5 +13,5 @@ public interface UsuariosRepository extends CrudRepository <UsuariosModel, Integ
     // Operacion de autenticación (SELECT)
     @Transactional (readOnly = true) // No afecta la integridad de la base de datos
     @Query (value = "SELECT * FROM cn03_usuarios WHERE usser_email= :usuario AND usser_passwd= :clave", nativeQuery = true)
-    public UsuariosModel login (@Param ("usuario") String usuario, @Param ("clave") String clave);
+    public UsuariosModel login (@Param ("usuario") Integer usuario, @Param ("clave") Integer clave);
 }
