@@ -4,6 +4,7 @@ import java.io.Serializable;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Size;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -28,9 +29,13 @@ public class ProductosModel implements Serializable{
     @NotEmpty(message = "El campo Valor no puede estar vacío")
     @Column(name="product_cost")
     private String product_cost;
+    @NotEmpty(message = "El campo Valor no puede estar vacío")
+    @Size(min = 3, max = 10, message = "El campo Contraseña debe tener mínimo 3 y máximo 10 caracteres")
+    @Column(name="product_attachment")
+    private String product_attachment;
 
     @Override
     public String toString(){
-        return "Categorías [_id:" + _id + ", product_name:" + product_name + ", product_category:" + product_category + ", product_description:" + product_description + ", product_cost:" + product_cost + "]";
+        return "Categorías [_id:" + _id + ", product_name:" + product_name + ", product_category:" + product_category + ", product_description:" + product_description + ", product_cost:" + product_cost + ", product_attachment:" + product_attachment + "]";
     }
 }
