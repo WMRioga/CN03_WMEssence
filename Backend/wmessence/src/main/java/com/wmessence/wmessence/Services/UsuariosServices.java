@@ -30,4 +30,8 @@ public class UsuariosServices {
     public List <UsuariosModel> findAll(){
         return (List<UsuariosModel>) usuariosRepository.findAll();
     }
+    @Transactional (readOnly = true)
+    public UsuariosModel login(String usuario, String clave){
+        return usuariosRepository.login(usuario, clave);
+    }
 }
