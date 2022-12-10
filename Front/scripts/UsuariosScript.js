@@ -26,13 +26,13 @@
     function Login(){
         console.log("Logueando...")
 
-        let usser_name = document.FormAccess.usser_name.value
-        let usser_passwd = document.FormAccess.usser_passwd.value
-        let usser_email = document.FormAccess.usser_email.value
-        console.log(usser_name +' || '+ usser_passwd +' || '+ usser_email)
-        let usser = {
-            'usser_name':"",
-            'usser_passwd':usser_passwd,
-            'usser_email':usser_email
-        }
+        // let usser_name = document.FormAccess.usser_name.value
+        // let usser_passwd = document.FormAccess.usser_passwd.value
+        // let usser_email = document.FormAccess.usser_email.value
+        // console.log(usser_name +' || '+ usser_passwd +' || '+ usser_email)
+        // let usser = {
+        //     'usser_name':"",
+        //     'usser_passwd':usser_passwd,
+        //     'usser_email':usser_email
+        // }
     }
