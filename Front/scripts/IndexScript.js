@@ -20,3 +20,4 @@ function login(){
     .then (data => {console.log(data)
     });
 }
+login()

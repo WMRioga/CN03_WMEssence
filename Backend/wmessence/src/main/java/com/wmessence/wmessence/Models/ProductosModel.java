@@ -29,8 +29,8 @@ public class ProductosModel implements Serializable{
     @NotEmpty(message = "El campo Valor no puede estar vacío")
     @Column(name="product_cost")
     private String product_cost;
-    @NotEmpty(message = "El campo Valor no puede estar vacío")
-    @Size(min = 3, max = 10, message = "El campo Contraseña debe tener mínimo 3 y máximo 10 caracteres")
+    // @NotEmpty(message = "El campo Valor no puede estar vacío")
+    // @Size(min = 3, max = 10, message = "El campo Contraseña debe tener mínimo 3 y máximo 10 caracteres")
     @Column(name="product_attachment")
     private String product_attachment;
 
