@@ -23,9 +23,6 @@ function listar_productos(){
                 codigo += '         <td>'+element.product_name+'</td>'
                 codigo += '         <td>'+element.product_description+'</td>'
                 codigo += '         <td> $'+element.product_cost+'</td>'
-                
-                // codigo += '        <td><a href="Productos_Editar.html?_id='+element._id+'" type="button" class="btn btn-primary btn-sm">Editar</a><button onclick="eliminar_productos('+element._id+')" type="submit" class="btn btn-primary btn-sm">Eliminar</button></td>'
-                
                 codigo += '         <td>'
                 codigo += '             <div class="btn-group btn-group-sm d-grid d-md-flex justify-content-md-end" role="group" aria-label="Small button group">'
                 codigo += '                 <a href="Productos_Editar.html?_id='+element._id+'" type="button" class="btn btn-outline-dark">Editar</a>'
